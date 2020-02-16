@@ -64,11 +64,13 @@
               <div class="modal-body">
                   <form class="px-4 py-1" id="lyrics_form">
                     {{ csrf_field() }}
+                    
                     <div class="form-group">
                       <label for="exampleFormEmail">タイトル</label>
                       <p id="lyrics_title_error"></p>
                       <input type="text" class="form-control"  placeholder="タイトル" autofocus name="lyrics_title">
                     </div>
+                    
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">ひとこと</label>
                         <p id="lyrics_comment_error"></p>
