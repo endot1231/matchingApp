@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\addAccount;
 use App\users;
 use App\postsModel;
-
+use Illuminate\Support\Facades\Hash;
 
 class accountController extends Controller
 {
@@ -31,7 +31,7 @@ class accountController extends Controller
         $users = new users;
         $users->user_name = $request->name;
         $users->email = $request->email;
-        $users->password = $request->password1;
+        $users->password = Hash::make($request->password1);
         $users->icon = '';
         $users->comment = '';
 
@@ -47,10 +47,24 @@ class accountController extends Controller
 
     public function checkLogin(Request $request)
     {
-        $users = users::where('email','=',$request->email)->where('password','=',$request->password)->first();
+        $users = users::where('email','=',$request->email)->first();
         if(empty($users))
         {
             return view('account.login',['login'=>'false']);
+        }
+
+        // パスワードの比較
+
+        /*
+        if(!Hadh::check($users->password,$request->password))
+        {
+            return view('account.login',['login'=>'false']);
+        }
+        */
+
+        if (!Hash::check($request->password,$users->password)) {
+            // パスワード一致
+             return view('account.login',['login'=>'false']);
         }
 
         $request->session()->put('user_id',$users->user_id);
