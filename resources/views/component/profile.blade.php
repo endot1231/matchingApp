@@ -1,19 +1,17 @@
-<div class="container mt-5 mb-2 bg-white">
+<div class="container mt-5 mb-2">
+    <div class="row justify-content-between">
+      <div class="col-3 offset-md-4 ofset-0 text">
+        <img class="mb-3 profile_img" src="{{$user->icon}}" />
+      </div>
+    </div>
+  
     <div class="row">
-        <div class="col-3 mx-auto profile_img">
-            <img class="pt-2 pb-5" src="{{$user->icon}}"/>
-        </div>
+      <div class="col pt-2">
+        <h5 class="font-weight-bold">{{$user->user_name}}</h5>
+      </div>
     </div>
-
-    <div class="row">            
-        <div class="col pt-2">
-            <h5 class="font-weight-bold">{{$user->user_name}}</h5>
-        </div>
-    </div>
-
-    <div class="row  profile-comment">            
-        <div class="col">
-            {{$user->comment}}      
-        </div>
+  
+    <div class="row m-2">
+      {{$user->comment}}
     </div>
 </div>
