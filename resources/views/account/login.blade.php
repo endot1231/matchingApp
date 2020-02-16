@@ -36,7 +36,6 @@
             </div>
           </form>
       </div>
-      <a class="m-5 btn btn-primary btn-lg bg-base" href="{{ action('ajaxController@postMail') }}">忘れた場合</a>
   </div>
 </article>
 @endsection
