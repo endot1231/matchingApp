@@ -1,0 +1,29 @@
+version: '2'
+services:
+  web:
+    image: nginx:1.15.6
+    container_name: web
+    ports:
+      - "8000:80"
+    depends_on: # 追加
+      - app
+    volumes:
+      - ./docker/web/default.conf:/etc/nginx/conf.d/default.conf
+      - .:/var/www/html
+  app:
+    build: ./docker/php
+    container_name: app
+    depends_on:
+      - mysql
+    volumes:
+      - .:/var/www/html
+  mysql:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_DATABASE: sample
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
