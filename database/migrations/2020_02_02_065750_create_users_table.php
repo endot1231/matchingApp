@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->string('icon','100');
             $table->timestamp('create_time');
             $table->primary('user_id');
-            $table->primary('user_name');
         });
     }
 
