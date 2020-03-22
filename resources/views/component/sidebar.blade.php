@@ -37,23 +37,26 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                       <label for="exampleFormEmail">タイトル</label>
-                      <p id="music_title_error"></p>
-                      <input type="text" class="form-control music_title"  placeholder="タイトル" autofocus name="music_title">
+                <p id="music_title_error" class="errors"></p>
+                <input type="text" class="form-control music_title" placeholder="タイトル" autofocus name="music_title">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">ひとこと</label>
-                        <p id="music_comment_error"></p>
-                        <textarea class="form-control music_comment" id="exampleFormControlTextarea1" name="music_comment" rows="3"></textarea>
+                <p id="music_comment_error" class="errors"></p>
+                <textarea class="form-control music_comment" id="exampleFormControlTextarea1" name="music_comment"
+                  rows="3"></textarea>
                       </div>
 
-                      <p id="music_file_error"></p>
+              <p id="music_file_error" class="errors"></p>
                       <div class="custom-file">                
-                        <input type="file" class="custom-file-input music_file" id="customFile" name="music_file" accept="audio/mpeg,audio/wav">
+                <input type="file" class="custom-file-input music_file" id="customFile" name="music_file"
+                  accept="audio/mpeg,audio/wav">
                         <label class="custom-file-label" for="customFile">ファイル選択...</label>
                       </div>
 
                     <button id="music_button" type="button" class="btn btn-primary mt-3">
-                      <span class="spinner-border spinner-border-sm d-none" role="status" id="music_spiner" aria-hidden="false"></span>
+                <span class="spinner-border spinner-border-sm d-none" role="status" id="music_spiner"
+                  aria-hidden="false"></span>
                       投稿</button>
                   </form>
                 </div> 
@@ -67,24 +70,27 @@
                     
                     <div class="form-group">
                       <label for="exampleFormEmail">タイトル</label>
-                      <p id="lyrics_title_error"></p>
-                      <input type="text" class="form-control"  placeholder="タイトル" autofocus name="lyrics_title">
+                <p id="lyrics_title_error" class="errors"></p>
+                <input type="text" class="form-control" placeholder="タイトル" autofocus name="lyrics_title">
                     </div>
                     
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">ひとこと</label>
-                        <p id="lyrics_comment_error"></p>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="lyrics_comment"></textarea>
+                <p id="lyrics_comment_error" class="errors"></p>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                  name="lyrics_comment"></textarea>
                       </div>
 
                       <div class="form-group">
                           <label for="exampleFormControlTextarea1">歌詞</label>
-                          <p id="lyrics_contents_error"></p>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="lyrics_contents"></textarea>
+                <p id="lyrics_contents_error" class="errors"></p>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"
+                  name="lyrics_contents"></textarea>
                         </div>
 
-                    <button  id="lyrics_button" type="button" class="btn btn-primary mt-3">
-                      <span class="spinner-border spinner-border-sm d-none" role="status" id="lyrics_spiner" aria-hidden="false"></span>
+              <button id="lyrics_button" type="button" class="btn btn-primary mt-3">
+                <span class="spinner-border spinner-border-sm d-none" role="status" id="lyrics_spiner"
+                  aria-hidden="false"></span>
                       投稿
                     </button>
                     </form>   

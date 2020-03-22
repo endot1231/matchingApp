@@ -48,14 +48,14 @@
 
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">名前</label>
-                <p id="profile_name_error"></p>
-                <input type="text" class="form-control profile_name" 　autofocus name="profile_name"
+                <p id="profile_name_error" class="errors"></p>
+                <input type="text" class="form-control profile_name" autofocus name="profile_name"
                   value="{{$user->user_name}}">
               </div>
 
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">自己紹介</label>
-                <p id="profile_comment_error"></p>
+                <p id="profile_comment_error" class="errors"></p>
                 <textarea class="form-control profile_comment" name="profile_comment"
                   rows="6">{{$user->comment}}</textarea>
               </div>

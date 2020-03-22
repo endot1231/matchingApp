@@ -59,7 +59,7 @@
                           <input type="hidden" value="{{$content->post_id}}" name="post_id"/>
                             <div class="form-group">
                               <label for="exampleFormControlTextarea1">コメント</label>
-                              <p id="comment_error"></p>
+                              <p id="comment_error" class="errors"></p>
                               <textarea class="form-control comment" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
                             </div>
     

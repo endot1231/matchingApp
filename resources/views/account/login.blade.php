@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-10 offset-1 col-md-6 offset-md-3 bg-light p-5 mt-5 border border-info">
       @isset($login)
-          <p>アドレスまたはパスワードが異なります。</p>
+          <p class="errors">アドレスまたはパスワードが異なります。</p>
       @endisset
         <form action="/login" method="POST">
           {{ csrf_field() }}
