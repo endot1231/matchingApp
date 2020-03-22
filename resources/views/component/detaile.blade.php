@@ -45,6 +45,8 @@
 <div class="modal fade" id="modal" tabindex="-1" data-backdrop="static"　role="dialog" aria-labelledby="label1" aria-hidden="true">
       <div class="modal-dialog" role="document">
             <div class="modal-content">
+
+              @if (Session::has('user_id'))
               <div class="modal-header">
                 <h5 class="modal-title" id="myModalLabel">コメント</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="閉じる" id="comment_close"><span aria-hidden="true">&times;</span></button>
@@ -70,6 +72,35 @@
                     </div> 
                 </div>
               </div>
+              @else
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="閉じる"><span aria-hidden="true"
+                      　id="loginFrom_close">&times;</span></button>
+                </div>
+          
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-10 offset-1">
+                          
+                      <p>SNS機能を使用する場合、ログインが必要です。</p>
+                      
+                      <div class="col">
+                      <a href="{{url('/login')}}" class="btn col text-white bg-base mt-3 p-2">
+                      <span>ログイン</span></a>
+                     </div>
+          
+                     <div class="col">
+                      <a href="{{url('/singup')}}" class="btn col border-primary text-base mt-3 p-2">
+                      <span>新規登録</span></a>
+                    </div>
+          
+                      </div>
+          
+              </div>
+                </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
