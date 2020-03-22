@@ -7,6 +7,7 @@ use App\postsModel;
 use App\Http\Requests\postMusic;
 use App\Http\Requests\postLyrics;
 use App\Http\Requests\postComment;
+use App\Http\Requests\postProfile;
 
 use App\lyricsModel;
 use App\musicModel;
@@ -17,7 +18,6 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\maailSend;
-
 
 class ajaxController extends Controller
 {
@@ -50,7 +50,7 @@ class ajaxController extends Controller
         $music->filepath = $user_id."/".$imageName;
         $music->save();
 
-            \Storage::makeDirectory($user_id);
+        \Storage::makeDirectory($user_id);
 
         $file = $request->file('music_file');
 
@@ -96,15 +96,14 @@ class ajaxController extends Controller
         return['fin'=>''];
     }
 
-    public function postProfile(Request $request)
+    public function postProfile(postProfile $request)
     {
-        $user_id =$request->session()->get('user_id');
+        $user_id =$request->session()->get('user_id');  
         $user = users::find($user_id);
-
         $user->user_name =$request->profile_name;
         $user->comment =$request->profile_comment;
         $user->save();
-                
+
         $file = $request->file('profile_img');
         if(isset($file))
         {
@@ -114,22 +113,7 @@ class ajaxController extends Controller
             \Storage::putFileAs($user_id,$file, $imageName,'public');
         }
 
-        $user->save();
-
-        $files = \Storage::files($user_id);
-
-        if(isset($files))
-        {
-            \Storage::makeDirectory($user_id);
-        }
         return['fin'=>''];
-    }
-
-    function getFilePath($userId,$fileName)
-    {
-        $webPath = \Config::get('filesystems.disks.ftp.host');
-        $filePath = 'http://'.$webPath.'/'.$userId.'/'.$fileName;
-        return $filePath;
     }
 
     function postMail(Request $request)

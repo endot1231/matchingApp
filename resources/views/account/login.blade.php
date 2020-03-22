@@ -34,7 +34,7 @@
             </div>
             
             <div>
-              <input type="submit"  class="btn btn-primary" value="ログイン">
+              <input type="submit" class="btn bg-base text-white mt-3" value="ログイン">
             </div>
           </form>
       </div>

@@ -26,7 +26,7 @@
     </nav>
 
     <ul class="col-12 col-lg-8 order-lg-1 order-0 item_list mt-5 pt-5" id="item_list">
-        @if($contents !== null && $home) 
+        @if($contents !== null) 
           @foreach($contents as $content)
             @if($loop->iteration % 2 == 0)
               @include('component.item_even', ['content' => $content])

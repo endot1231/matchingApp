@@ -41,13 +41,8 @@ class homeController extends Controller
 
     public function getProfile(Request $request,$id)
     {
-        if (!$request->session()->exists('user_id')) 
-        {
-            return view('account.index');
-        }
-
         $user_id =$request->session()->get('user_id');
-     
+        
         $user = users::find($id);
         $contents = postsModel::where('user_id','=',$id)->get();
 
