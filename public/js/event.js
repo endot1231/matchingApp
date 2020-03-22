@@ -20,7 +20,6 @@ $('#music_button').click(function (e) {
   var music_comment = $(".music_comment").val();
   var file = $('.music_file')[0].files[0];
 
-
   $('#music_title_error').empty();
   $('#music_comment_error').empty();
   $('#music_file_error').empty();
@@ -226,7 +225,6 @@ $('#comment_button').click(function (e) {
   });
 });
 
-
 /*
 * プロフィール更新
 */
@@ -271,15 +269,13 @@ $('#profile_button').click(function (e) {
         {
           $('#profile_comment_error').append(value);
         }
-      });
-      alert("変更ができませんでした。");               
+      });       
   })
   // Ajaxリクエストが成功・失敗どちらでも発動
   .always( (data) => {
-  $('#comment_spinner').addClass("d-none");
+    $('#profile_spiner').addClass("d-none");
   });
 });
-
 
 // プロフィール画像更新
 $('#profile_img_button').on('change', function (e) {
