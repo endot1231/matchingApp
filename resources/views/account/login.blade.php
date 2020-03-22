@@ -2,6 +2,8 @@
 
 @section('title','ログイン')
 
+@include('component.header', ['title' => 'ログイン'])
+
 @section('contents')
 <article class="container mt-5">
   <div class="row">

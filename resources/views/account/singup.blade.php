@@ -2,6 +2,7 @@
 
 @section('title','新規登録')
 
+@include('component.header', ['title' => '新規登録'])
 
 @section('contents')
 <article class="container mt-5">
