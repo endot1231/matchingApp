@@ -56,6 +56,10 @@ header div .item-circ {
   z-index: 900;
 }
 
+#side_button_ul li{
+  cursor : pointer;
+}
+
 .title-border {
   display: flex;
   align-items: center;
@@ -257,6 +261,10 @@ header div .item-circ {
 
 .bg-comment {
   background: rgb(59, 145, 41);
+}
+
+.text-base {
+  color: #0073AA;
 }
 
 .text-music {
