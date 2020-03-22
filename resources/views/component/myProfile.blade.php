@@ -2,7 +2,7 @@
   <div class="row justify-content-between">
 
     <div class="col-3 offset-md-4 ofset-0 text">
-      <img class="mb-3 profile_img" src="{{$user->icon}}" />
+      <img class="mb-3 profile_img" src="{{ env("STORAGE_ENDPOINT") }}{{$user->icon}}" />
     </div>
 
 <div class="col-1 h-25 pt-2 mr-4">
@@ -39,7 +39,7 @@
               {{ csrf_field() }}
               
               <div class="myprofile_img_box setting_img">
-                <img class="profile_img mb-5" src="{{$user->icon}}" id="preview" />
+                <img class="profile_img mb-5" src="{{ env("STORAGE_ENDPOINT") }}{{$user->icon}}" id="preview" />
                 <label class="myprofile_img_button">
                   <i class="fas fa-camera fa-inverse"></i>
                   <input type="file" style="display:none" id="profile_img_button" name="profile_img">

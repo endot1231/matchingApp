@@ -2,7 +2,7 @@
     <i class="far fa-comment-dots item-circ detail-circ bg-comment"></i>
     <div class="item_panel row comment_panel">
         <div class="col-2">
-            <a href="{{ url('/profile') }}/{{$comment->user->user_id}}"><img class="mt-2 mb-3 item_img" src="{{$comment->user->icon}}"/></a>
+            <a href="{{ url('/profile') }}/{{$comment->user->user_id}}"><img class="mt-2 mb-3 item_img" src="{{ env("STORAGE_ENDPOINT") }}{{$comment->user->icon}}"/></a>
         </div>
               
         <div class="col-12 col-md-10">

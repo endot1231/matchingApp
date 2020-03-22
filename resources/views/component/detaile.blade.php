@@ -9,7 +9,7 @@
     
   <div class="item_panel row" id="detail">
     <div class="col-2 text-center">
-        <a href="{{ url('/profile') }}/{{$content->user->user_id}}"><img class="mt-2  mb-3 item_img" src="{{$content->user->icon}}"/></a>
+        <a href="{{ url('/profile') }}/{{$content->user->user_id}}"><img class="mt-2  mb-3 item_img" src="{{ env("STORAGE_ENDPOINT") }}{{$content->user->icon}}"/></a>
     </div>
   
     <div class="col-12 col-md-10">
@@ -26,7 +26,7 @@
       <p>{{$content->lyrics->contents}}</p>
       @else
       <audio controls class="col-12 col-md-8 p-0">
-        <source src="{{$content->music->filepath}}" type="audio/mp3">
+        <source src="{{ env("STORAGE_ENDPOINT") }}{{$content->music->filepath}}" type="audio/mp3">
         <p>※ご利用のブラウザでは再生することができません。</p>
       </audio>
       @endif 
