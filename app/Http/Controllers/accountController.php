@@ -15,7 +15,7 @@ class accountController extends Controller
         if ($request->session()->exists('user_id')) 
         {
             $contents = postsModel::orderBy('post_id','desc')->take(20)->get();
-            return view('home.index',['contents'=>$contents ,'home' => true] );
+            return view('home.index',['contents'=>$contents]);
         }
 
         return view('account.index');
