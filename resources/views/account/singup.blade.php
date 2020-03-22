@@ -2,6 +2,7 @@
 
 @section('title','新規登録')
 
+@include('component.header', ['title' => '新規登録'])
 
 @section('contents')
 <article class="container mt-5">
@@ -42,7 +43,7 @@
             </div>
             
             <div>
-              <input class="btn btn-primary" type="submit" value="登録">
+              <input class="btn bg-base text-white mt-3 pl-4 pr-4" type="submit" value="登録">
             </div>
         </form>
       </div>

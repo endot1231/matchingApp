@@ -2,9 +2,12 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 use  Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
+
+
 
 class postLyrics extends FormRequest
 {
@@ -28,7 +31,7 @@ class postLyrics extends FormRequest
         return [
             'lyrics_title' => 'required|between:1,50',
             'lyrics_comment'=> 'required|between:1,128', 
-            'lyrics_contents'=> 'requiredbetween:1,600', 
+            'lyrics_contents'=> 'required|between:1,600', 
         ];
     }
 
@@ -41,7 +44,6 @@ class postLyrics extends FormRequest
             'lyrics_comment.between' => 'コメントは1~128文字で入力して下さい。',
             'lyrics_contents.required'=>'歌詞を入力してください。',
             'lyrics_contents.between'=>'歌詞は1~600文字で入力して下さい。',
-            
            ];       
     }
 

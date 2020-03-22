@@ -11,13 +11,16 @@ class homeController extends Controller
 {
     public function index(Request $request)
     {
+        if (!$request->session()->exists('user_id')) 
+        {
+            $contents = postsModel::orderBy('post_id','desc')->take(20)->get();
+            return view('home.index',['contents'=>$contents] );
+        }
+
         // セッションIDの再発行
-        Session::regenerate();
-
-        $data = $request->session()->all();
-
+        $request->session()->regenerate();
         $contents = postsModel::orderBy('post_id','desc')->take(20)->get();
-        return view('home.home',['contents'=>$contents]);
+        return view('home.index',['contents'=>$contents]);
     }
 
     public function getDetaile(Request $request,$id)
@@ -38,13 +41,8 @@ class homeController extends Controller
 
     public function getProfile(Request $request,$id)
     {
-        if (!$request->session()->exists('user_id')) 
-        {
-            return view('account.index');
-        }
-
         $user_id =$request->session()->get('user_id');
-     
+        
         $user = users::find($id);
         $contents = postsModel::where('user_id','=',$id)->get();
 

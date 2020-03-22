@@ -15,7 +15,7 @@ class accountController extends Controller
         if ($request->session()->exists('user_id')) 
         {
             $contents = postsModel::orderBy('post_id','desc')->take(20)->get();
-            return view('home.index',['contents'=>$contents ,'home' => true] );
+            return view('home.index',['contents'=>$contents]);
         }
 
         return view('account.index');
@@ -29,10 +29,13 @@ class accountController extends Controller
     public function add(addAccount $request)
     {
         $users = new users;
+        
         $users->user_name = $request->name;
         $users->email = $request->email;
         $users->password = Hash::make($request->password1);
-        $users->icon = '';
+        $userIconId =rand(1,10);
+
+        $users->icon = 'defalut/'.$userIconId.'.svg';
         $users->comment = '';
 
         $users->save();

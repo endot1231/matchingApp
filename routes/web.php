@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'accountController@index');
+Route::get('/', 'homeController@index');
 Route::get('/singup', 'accountController@singup');
 Route::post('/singup', 'accountController@add');
 Route::get('/login', 'accountController@login');

@@ -5,18 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch currently open script",
+            "name": "Listen for XDebug",
             "type": "php",
             "request": "launch",
             "port": 9000,
+            "pathMappings": {
+                "/var/www/html": "C:/xampp/htdocs/matchingapp"
+            },
         },
-        {
-            "name": "Launch currently open script",
-            "type": "php",
-            "request": "launch",
-            "program": "c://xampp//htdocs//matchingApp//public//index.php",
-            "cwd": "c://xampp//htdocs//matchingApp//public",
-            "port": 9000
-        }
     ]
 }

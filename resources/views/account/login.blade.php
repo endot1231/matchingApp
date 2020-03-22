@@ -2,12 +2,14 @@
 
 @section('title','ログイン')
 
+@include('component.header', ['title' => 'ログイン'])
+
 @section('contents')
 <article class="container mt-5">
   <div class="row">
     <div class="col-10 offset-1 col-md-6 offset-md-3 bg-light p-5 mt-5 border border-info">
       @isset($login)
-          <p>アドレスまたはパスワードが異なります。</p>
+          <p class="errors">アドレスまたはパスワードが異なります。</p>
       @endisset
         <form action="/login" method="POST">
           {{ csrf_field() }}
@@ -32,7 +34,7 @@
             </div>
             
             <div>
-              <input type="submit"  class="btn btn-primary" value="ログイン">
+              <input type="submit" class="btn bg-base text-white mt-3" value="ログイン">
             </div>
           </form>
       </div>

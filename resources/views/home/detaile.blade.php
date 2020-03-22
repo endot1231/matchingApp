@@ -19,7 +19,7 @@
                   @if(isset($content->lyrics->post_id))
                   歌詞 
                   @else
-                    作曲
+                  作曲
                   @endif   
               </h2>
           </div>   

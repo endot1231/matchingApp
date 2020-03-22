@@ -8,11 +8,11 @@
 
 <div class="row item_panel item" id="{{$content->post_id}}">
     <div class="col-2">
-        <a href="{{ url('/profile') }}/{{$content->user->user_id}}"><img class="mt-2 mb-sm-2 item_img" src="{{$content->user->icon}}"/></a>
+        <a href="{{ url('/profile') }}/{{$content->user->user_id}}"><img class="mt-2 mb-sm-2 item_img" src="{{ env("STORAGE_ENDPOINT") }}{{$content->user->icon}}"/></a>
     </div>
 
-    <div class="col-12 col-sm-10 pt-1 pl-1 pl-sm-2 pt-sm-4">
-        <h5 class="font-weight-bold">{{$content->user->user_name}}</h5>
+    <div class="col-12 col-sm-10 pt-1 pl-3 pl-sm-4 pt-sm-1">
+        <h5 class="font-weight-bold ">{{$content->user->user_name}}</h5>
     </div>
 
     <div class="col-12">
