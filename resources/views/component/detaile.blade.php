@@ -91,7 +91,7 @@
                      </div>
           
                      <div class="col">
-                      <a href="{{url('/singup')}}" class="btn col border-primary text-base mt-3 p-2">
+                      <a href="{{url('/authSingup')}}" class="btn col border-primary text-base mt-3 p-2">
                       <span>新規登録</span></a>
                     </div>
           

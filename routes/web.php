@@ -2,6 +2,7 @@
 use App\Http\Controllers\accountController;
 use App\Http\Controllers\ajaxController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\View\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,15 @@ Route::get('/authSingup',function()
 });
 
 Route::post('/authSingup','accountController@showtempSingupPage');
+Route::post('/authSingup/postMail','accountController@postMail');
+Route::get('/register/verify/{token}', 'accountController@showForm');
+
+Route::get('/usePolicy', function()
+{
+    return view('account.usePolicy');
+});
+
+
 Route::post('/singup', 'accountController@add');
 Route::get('/login', 'accountController@login');
 Route::post('/login', 'accountController@checkLogin');
