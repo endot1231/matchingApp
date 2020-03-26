@@ -21,30 +21,21 @@
           </ul>
         </div>
         @endif
-         
+
           <div class="form-group">
-              <label class="text-dark">ユーザー名</label>
-              <input class="form-control" type="text" name="name">
-            </div>
+            <label class="text-dark">ユーザー名</label>
+            <input class="form-control" type="text" name="name" value={{old('name')}}>
+          </div>
             
-            <div class="form-group">
+          <div class="form-group">
             <label for="exampleInputEmail1">メールアドレス</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" name="email" value="{{old('email')}}">
-            </div>
+            <input class="form-control" type="email"value="{{$email}}" readonly>
+            <input type="hidden" name="email_verify_token" value="{{$email_token}}">
+          </div>
 
-            <div class="form-group">
-              <label for="exampleInputPassword1">パスワード</label>
-              <input class="form-control" id="exampleInputPassword1" type="password" name="password1">
-            </div>
-
-            <div class="form-group">
-              <label class="account_singup_form_item-label">再度パスワード</label>
-              <input class="form-control" id="exampleInputPassword1" type="password" name="password2">
-            </div>
-            
-            <div>
-              <input class="btn bg-base text-white mt-3 pl-4 pr-4" type="submit" value="登録">
-            </div>
+          <div>
+            <input class="btn bg-base text-white mt-3 pl-4 pr-4" type="submit" value="登録">
+          </div>
         </form>
       </div>
     </div>

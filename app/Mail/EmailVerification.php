@@ -7,21 +7,20 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class maailSend extends Mailable
+class EmailVerification extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $title;
-    protected $text;
+    protected $user;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user)
     {
-        $this->title ="sfdfdsds";
+        $this->user = $user;
     }
 
     /**
@@ -31,10 +30,9 @@ class maailSend extends Mailable
      */
     public function build()
     {
-        return $this->text('emails.email')
-        ->subject($this->title)
-        ->with([
-            'text' => $this->text,
-          ]);
+        return $this
+        ->subject('仮登録が完了しました')
+        ->view('account.authSingup',['token' => $this->user->email_verify_token,])
+        ->with(['token' => $this->user->email_verify_token,]);
     }
 }

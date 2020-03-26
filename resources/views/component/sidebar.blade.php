@@ -125,13 +125,13 @@
                 
             <p>SNS機能を使用する場合、ログインが必要です。</p>
             
-            <div class="col">
+          <div class="col">
             <a href="{{url('/login')}}" class="btn col text-white bg-base mt-3 p-2">
             <span>ログイン</span></a>
-           </div>
+          </div>
 
-           <div class="col">
-            <a href="{{url('/singup')}}" class="btn col border-primary text-base mt-3 p-2">
+          <div class="col">
+            <a href="{{url('/authSingup')}}" class="btn col border-primary text-base mt-3 p-2">
             <span>新規登録</span></a>
           </div>
 

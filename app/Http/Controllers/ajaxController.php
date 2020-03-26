@@ -115,12 +115,4 @@ class ajaxController extends Controller
 
         return['fin'=>''];
     }
-
-    function postMail(Request $request)
-    {
-        $name = 'ララベル太郎';
-        $text = 'これからもよろしくお願いいたします。';
-        $to = 'endot1231@gmail.com';
-        Mail::to($to)->send(new maailSend($name, $text));
-    }
 }

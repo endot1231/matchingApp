@@ -13,15 +13,6 @@
       @endisset
         <form action="/login" method="POST">
           {{ csrf_field() }}
-          @if ($errors->any())
-          <div class="errors">
-            <ul>
-              @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-          @endif
         
             <div class="form-group">
               <label for="exampleInputEmail1">メールアドレス</label>
@@ -33,8 +24,9 @@
               <input class="form-control" type="password" name="password">
             </div>
             
-            <div>
-              <input type="submit" class="btn bg-base text-white mt-3" value="ログイン">
+            <div class="row">
+              <input type="submit" class="btn bg-base text-white col-3 ml-3 mt-3" value="ログイン">
+              <p class="col-12 mt-2">まだ登録していない方は<a href="{{url('/authSingup')}}">こちら</a>から</p>
             </div>
           </form>
       </div>
