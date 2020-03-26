@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\addAccount;
+use App\Http\Requests\tempAddAccountRequest;
 use App\users;
 use App\postsModel;
 use Illuminate\Support\Facades\Hash;
+use App\Mail\EmailVerification;
+use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class accountController extends Controller
 {
@@ -19,6 +23,38 @@ class accountController extends Controller
         }
 
         return view('account.index');
+    }
+
+    public function showForm($email_token)
+    {
+        // 使用可能なトークンか
+        if ( !users::where('email_verify_token',$email_token)->exists() )
+        {
+            return view('account.authError',['message'=>'無効なトークンです。']);
+        } 
+        else 
+        {
+            $user = users::where('email_verify_token', $email_token)->first();
+            // 本登録済みユーザーか
+            if ($user->status == config('const.USER_STATUS.REGISTER')) //REGISTER=1
+            {
+                logger("status". $user->status );
+                return view('account.authError',['message'=>'すでに本登録されています。ログインして利用してください。']);
+            }
+            
+            // ユーザーステータス更新
+            $user->status = config('const.USER_STATUS.MAIL_AUTHED');
+            $user->verify_at = Carbon::now();
+
+            if($user->save()) 
+            {
+                return view('account.singup', ['email'=>$user->email,'email_token'=>$email_token]);
+            } 
+            else
+            {
+                return view('account.authError',['message'=>'メール認証に失敗しました。再度、メールからリンクをクリックしてください。']);
+            }
+        }
     }
 
     public function showtempSingupPage(tempAddAccountRequest $request)
@@ -46,18 +82,15 @@ class accountController extends Controller
 
     public function add(addAccount $request)
     {
-        $users = new users;
-        
-        $users->user_name = $request->name;
-        $users->email = $request->email;
-        $users->password = Hash::make($request->password1);
+        $user = users::where('email_verify_token','=',$request->email_verify_token)->first();
+
+        $user->user_name = $request->name;
         $userIconId =rand(1,10);
 
-        $users->icon = 'defalut/'.$userIconId.'.svg';
-        $users->comment = '';
-
-        $users->save();
-
+        $user->icon = 'defalut/'.$userIconId.'.svg';
+        $user->status = config('const.USER_STATUS.REGISTER');
+        $user->comment = '';
+        $user->save();
         return view('account.singup',['FinSingup'=>'true']);
     }
 
@@ -74,20 +107,11 @@ class accountController extends Controller
             return view('account.login',['login'=>'false']);
         }
 
-        // パスワードの比較
-
-        /*
-        if(!Hadh::check($users->password,$request->password))
-        {
-            return view('account.login',['login'=>'false']);
-        }
-        */
-
         if (!Hash::check($request->password,$users->password)) {
             // パスワード一致
              return view('account.login',['login'=>'false']);
         }
-
+       
         $request->session()->put('user_id',$users->user_id);
         $request->session()->regenerate();
 
