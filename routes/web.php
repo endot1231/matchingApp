@@ -15,7 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'homeController@index');
-Route::get('/singup', 'accountController@singup');
+
+Route::get('/authSingup',function()
+{
+    return view('account.tempInputSingup');
+});
+
+Route::post('/authSingup','accountController@showtempSingupPage');
 Route::post('/singup', 'accountController@add');
 Route::get('/login', 'accountController@login');
 Route::post('/login', 'accountController@checkLogin');
