@@ -30,8 +30,18 @@ class accountController extends Controller
         return view('account.tempSingup',$bridge_request);
     }
 
+    public function postMail(Request $request)
     {
-        return view('account.singup');
+            $user = users::create([
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'email_verify_token' => base64_encode($request['email']),
+        ]);
+
+        $email = new EmailVerification($user);
+        Mail::to($user->email)->send($email);
+
+        return view('account.registered');
     }
 
     public function add(addAccount $request)
