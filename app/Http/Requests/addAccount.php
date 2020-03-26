@@ -25,9 +25,6 @@ class addAccount extends FormRequest
     {
         return [
             'name' => 'required|between:1,32',
-            'email'=> 'email',
-            'email'=> 'unique:users,email',
-            'password1'=>'required|between:1,32|same:password2',
         ];
     }
 
@@ -36,11 +33,6 @@ class addAccount extends FormRequest
         return[     
             'name.required' => 'ユーザー名をしてください。',
             'name.between' => 'ユーザー名は1~32文字で入力して下さい。',
-            'email.email'=> 'メールアドレスの形式が正しくありません。',
-            'email.unique'=> 'すでに同じメールアドレスが登録されています。',
-            'password1.required'=>'パスワード入力してください。',
-            'password1.between'=>'パスワードは1~32文字で入力して下さい。',
-            'password1.same'=>'パスワードが一致しません。',
            ];   
     }
 }
