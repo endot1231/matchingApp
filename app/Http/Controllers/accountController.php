@@ -21,7 +21,15 @@ class accountController extends Controller
         return view('account.index');
     }
 
-    public function singup()
+    public function showtempSingupPage(tempAddAccountRequest $request)
+    {
+        $bridge_request['email'] = $request->email;
+        $bridge_request['password'] = $request->password1;
+        $bridge_request['password_mask'] = '******';
+
+        return view('account.tempSingup',$bridge_request);
+    }
+
     {
         return view('account.singup');
     }
