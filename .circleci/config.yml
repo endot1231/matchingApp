@@ -10,9 +10,7 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "composer.json" }}
             - v1-dependencies-
- 
-      - run: echo $ENV | base64 --decode > .env
- 
+
       - run: sudo composer install -n --prefer-dist
  
       - save_cache:
@@ -35,7 +33,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "f4:f3:2e:13:50:85:47:e8:fb:5e:5e:48:be:c0:b4:e3"
-      - run: ssh -o "StrictHostKeyChecking=no" -p $SSH_PORT $SSH_USER@$SSH_HOST "~/deploy.sh"     
+      - run: ssh　-p $SSH_PORT $SSH_USER@$SSH_HOST "~/deploy.sh"     
  
 workflows:
   version: 2
