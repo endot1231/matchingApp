@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.2.9
+      　user: root
     steps:
       - checkout
  
