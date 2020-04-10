@@ -39,7 +39,7 @@ workflows:
   version: 2
   test:
     jobs:
-      - deploy
+      - deploy:
           filters:
-                branches:
-                  only: master  
+            branches:
+              only: master  
