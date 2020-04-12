@@ -10,7 +10,8 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "composer.json" }}
             - v1-dependencies-
-       - run: echo $ENV | base64 --decode > .env
+
+      - run: echo $ENV | base64 --decode > .env
 
       - run: sudo composer install -n --prefer-dist
  
