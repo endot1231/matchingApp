@@ -5,7 +5,7 @@ jobs:
       - image: circleci/php:7.2.9
     steps:
       - checkout
- 
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "composer.json" }}
@@ -32,7 +32,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "f4:f3:2e:13:50:85:47:e8:fb:5e:5e:48:be:c0:b4:e3"
-      - run: ssh -p$SSH_PORT $SSH_USER@$SSH_HOST "~/deploy.sh"
+      - run: ssh -p$SSH_PORT -o "StrictHostKeyChecking=no" $SSH_USER@$SSH_HOST "~/deploy.sh"
  
 workflows:
   version: 2
