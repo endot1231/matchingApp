@@ -19,24 +19,27 @@ class userTableSeeder extends Seeder
               'email' => '',
               'password' => '',
               'comment' => '自己紹介が入ります。',
-              'icon'=>'defalut/1.svg'
+              'icon'=>'defalut/1.svg',
+              'create_time'=> new DateTime()
             ],
             [
-                'user_id' => '2',
-                'user_name' => 'サンプルユーザー2',
-                'email' => '',
-                'password' => '',
-                'comment' => '自己紹介が入ります。',
-                'icon'=>'defalut/2.svg'
-              ],
-              [
-                'user_id' => '3',
-                'user_name' => 'サンプルユーザー3',
-                'email' => '',
-                'password' => '',
-                'comment' => '自己紹介が入ります。',
-                'icon'=>'defalut/3.svg'
-              ],
-          ]);
+              'user_id' => '2',
+              'user_name' => 'サンプルユーザー2',
+              'email' => '',
+              'password' => '',
+              'comment' => '自己紹介が入ります。',
+              'icon'=>'defalut/2.svg',
+              'create_time'=> new DateTime()
+            ],
+            [
+              'user_id' => '3',
+              'user_name' => 'サンプルユーザー3',
+              'email' => '',
+              'password' => '',
+              'comment' => '自己紹介が入ります。',
+              'icon'=>'defalut/3.svg',
+              'create_time'=> new DateTime()
+            ],
+        ]);
     }
 }
