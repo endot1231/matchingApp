@@ -19,8 +19,7 @@ class userTableSeeder extends Seeder
               'email' => '',
               'password' => '',
               'comment' => '自己紹介が入ります。',
-              'icon'=>'defalut/1.svg',
-              'create_time'=> new DateTime()
+              'icon'=>'defalut/1.svg'
             ],
             [
               'user_id' => '2',
@@ -28,8 +27,7 @@ class userTableSeeder extends Seeder
               'email' => '',
               'password' => '',
               'comment' => '自己紹介が入ります。',
-              'icon'=>'defalut/2.svg',
-              'create_time'=> new DateTime()
+              'icon'=>'defalut/2.svg'
             ],
             [
               'user_id' => '3',
@@ -37,8 +35,7 @@ class userTableSeeder extends Seeder
               'email' => '',
               'password' => '',
               'comment' => '自己紹介が入ります。',
-              'icon'=>'defalut/3.svg',
-              'create_time'=> new DateTime()
+              'icon'=>'defalut/3.svg'
             ],
         ]);
     }
