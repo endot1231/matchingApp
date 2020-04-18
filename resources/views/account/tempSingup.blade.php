@@ -26,7 +26,7 @@
                 </div>
             
                 <div>
-                    <input class="btn bg-base text-white mt-3 pl-4 pr-4" type="submit" value="メール送信">
+                    <input class="btn col-12 bg-base text-white mt-3 pl-4 pr-4" type="submit" value="メール送信">
                 </div>
             </form>
         </div>
