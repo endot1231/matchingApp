@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password','100');   
             $table->string('comment','255');   
             $table->string('icon','100');
-            $table->timestamp('create_time');
+            $table->timestamp('create_time')->default(DB::raw('CURRENT_TIMESTAMP'));
         
         });
     }
