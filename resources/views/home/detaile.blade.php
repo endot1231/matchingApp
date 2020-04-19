@@ -3,29 +3,34 @@
 @section('contents')
 <div class="container">
 
-    <header class="bg-base item-inverted fixed-top">
-      <div class="container">
-        <div class="row">
-            <div class="offset-lg-3 col-1 p-0">        
-                @isset($content->lyrics->post_id)
-                <i class="bg-lyrics far fa-edit fa-fw item-circ detail-circ p-1"  id="detaile_icon"></i>
-                @else
-                <i class="bg-music fas fa-music fa-fw item-circ detail-circ p-1"  id="detaile_icon"></i> 
-                @endif   
-            </div>
+  <header class="bg-base item-inverted fixed-top">
+    <div class="container">
+      <div class="row">
+          <div class="offset-lg-3 col-1 p-0">        
+              @isset($content->lyrics->post_id)
+              <i class="bg-lyrics far fa-edit fa-fw item-circ detail-circ p-1"  id="detaile_icon"></i>
+              @else
+              <i class="bg-music fas fa-music fa-fw item-circ detail-circ p-1"  id="detaile_icon"></i> 
+              @endif   
+          </div>
 
-            <div class="col-10 text-center text-white p-0">
-                <h2> 
+          <div class="row text-white">        
+            <div class="offset-1 col-1">
+              <i class="fas fa-arrow-left fa-2x mt-1" onclick="history.back()"></i>
+            </div>      
+            <div class="col-8 text-center p-0">
+                <h2 class="ml-5"> 
                   @if(isset($content->lyrics->post_id))
                   歌詞 
                   @else
                   作曲
                   @endif   
               </h2>
-          </div>   
+          </div>
         </div>
-      </div>      
-    </header>
+      </div>
+    </div>      
+  </header>
 
   <div class="row">
     <nav class="col-12 col-lg-3 order-lg-0 order-1">
