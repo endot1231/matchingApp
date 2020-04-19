@@ -30,15 +30,17 @@
       @include('component.profile',['user'=>$user])
       @endif
 
+      @if(count($contents) > 1 )
       <ul class="item_list line_left profile_item mt-5">
-        @if($contents !== null)
         @foreach($contents as $content)
         <li class="item-inverted">
           @include('component.item',['content' => $content])
         </li>
         @endforeach
-        @endif
       </ul>
+      @else
+      <p>投稿はありません</p>
+      @endif
     </div>
 
   </div>
