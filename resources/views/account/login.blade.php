@@ -25,7 +25,7 @@
             </div>
             
             <div class="row">
-              <input type="submit" class="btn bg-base text-white col-3 ml-3 mt-3" value="ログイン">
+              <input type="submit" class="btn bg-base text-white col-12 col-md-4  ml-3 mt-3" value="ログイン">
               <p class="col-12 mt-2">まだ登録していない方は<a href="{{url('/authSingup')}}">こちら</a>から</p>
             </div>
           </form>

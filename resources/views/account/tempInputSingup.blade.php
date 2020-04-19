@@ -47,7 +47,7 @@
             </div>
   
           <div class="row">
-            <input class="btn bg-base text-white col-3 mt-3 ml-3" type="submit" value="仮登録">
+            <input class="btn bg-base text-white col-12 col-md-3 mt-3 ml-3" type="submit" value="仮登録">
             <p class="col-12 mt-2">すでに登録済みの方は<a href="{{url('/login')}}">こちら</a>から</p>
           </div>
         </form>

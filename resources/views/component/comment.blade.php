@@ -10,7 +10,7 @@
             <p>{{$comment->contents}}</p>
         </div>  
 
-        <div class="col-12 text-right">
+        <div class="col-8 offset-4 text-right">
             <button type="button" class="btn func_button" data-toggle="modal" data-target="#modal">
                 <i class="fas fa-reply"></i>
                 コメント
