@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'minio'),
+    'default' => env('FILESYSTEM_DRIVER', 'conoha'),
 
     /*
     |--------------------------------------------------------------------------
@@ -80,6 +80,16 @@ return [
             'secret' => env('MINIO_SECRET'),
             'region' => env('MINIO_REGION'),
             'bucket' => env('MINIO_BUCKET'),
+        ],
+
+        'conoha' => [
+            'driver'        => 'conoha',
+            'auth_url'      => env('OS_AUTH_URL', ''),
+            'username'      => env('OS_USERNAME', ''),
+            'password'      => env('OS_PASSWORD', ''),
+            'tenant_name'   => env('OS_TENANT_NAME', ''),
+            'container'     => env('OS_CONTAINER', ''),
+            'region'        => env('OS_REGION', ''),
         ],
 
     ],
