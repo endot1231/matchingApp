@@ -102,7 +102,7 @@ class ajaxController extends Controller
         $user = users::find($user_id);
         $user->user_name =$request->profile_name;
         $user->comment =$request->profile_comment;
-        $user->save();
+       
 
         $file = $request->file('profile_img');
         if(isset($file))
@@ -113,6 +113,7 @@ class ajaxController extends Controller
             \Storage::putFileAs($user_id,$file, $imageName,'public');
         }
 
+        $user->save();
         return['fin'=>''];
     }
 }
