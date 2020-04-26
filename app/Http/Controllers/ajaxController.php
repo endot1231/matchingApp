@@ -117,7 +117,7 @@ class ajaxController extends Controller
             $imageName = str_shuffle(time().$file->getClientOriginalName()). '.' .$file->getClientOriginalExtension();
             $user->icon = $user_id."/".$imageName;
             \Storage::makeDirectory($user_id);
-            \Storage::putFileAs($user_id,$file, $imageName,'public');
+            \Storage::putFileAs($user_id,$image, $imageName,'public');
         }
 
         $user->save();
