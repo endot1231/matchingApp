@@ -109,6 +109,7 @@ class ajaxController extends Controller
         {
             //EXIF情報の取得
             $exif = @exif_read_data($file); 
+            $exif = $exif ? $exif : [];
             $image = imagecreatefromstring(file_get_contents($file));
 
             // 画像の回転処理
