@@ -34,7 +34,7 @@
           </div>
 
           <div>
-            <input class="btn bg-base text-white mt-3 pl-4 pr-4" type="submit" value="登録">
+            <input class="btn bg-base text-white mt-3 col col-md-3" type="submit" value="登録">
           </div>
         </form>
       </div>

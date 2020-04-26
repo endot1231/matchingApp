@@ -38,18 +38,17 @@
           </div>  
 
           <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                <label class="form-check-label" for="invalidCheck2">
-                <a href="{{url('/usePolicy')}}">利用規約</a>に同意する
-                </label>
-              </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+              <label class="form-check-label" for="invalidCheck2">
+              <a href="{{url('/usePolicy')}}">利用規約</a>に同意する
+              </label>
             </div>
-  
-          <div class="row">
-            <input class="btn bg-base text-white col-12 col-md-3 mt-3 ml-3" type="submit" value="仮登録">
-            <p class="col-12 mt-2">すでに登録済みの方は<a href="{{url('/login')}}">こちら</a>から</p>
           </div>
+    
+          <input class="btn bg-base text-white col col-md-3 mt-3" type="submit" value="仮登録">
+          <p class="col-12 mt-2 p-0">すでに登録済みの方は<a href="{{url('/login')}}">こちら</a>から</p>
+  
         </form>
       </div>
     </div>

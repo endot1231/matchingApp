@@ -23,11 +23,10 @@
               <label for="exampleInputPassword1">パスワード</label>
               <input class="form-control" type="password" name="password">
             </div>
-            
-            <div class="row">
-              <input type="submit" class="btn bg-base text-white col-12 col-md-4  ml-3 mt-3" value="ログイン">
-              <p class="col-12 mt-2">まだ登録していない方は<a href="{{url('/authSingup')}}">こちら</a>から</p>
-            </div>
+                    
+            <input type="submit" class="btn bg-base text-white col col-md-4 mt-3" value="ログイン">
+            <p class="col-12 mt-2 p-0">まだ登録していない方は<a href="{{url('/authSingup')}}">こちら</a>から</p>
+
           </form>
       </div>
   </div>
