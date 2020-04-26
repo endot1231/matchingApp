@@ -29,15 +29,7 @@ $('#music_button').click(function (e) {
     $('#music_file_error').append("ファイルを選択して下さい。");
     return;
   }
-  
-  var typeArry = splitExt(file.name);
 
-  if(typeArry[typeArry.length - 1] !== "mp3" && typeArry[typeArry.length - 1] !== "wav")
-  {
-    $('#music_file_error').append("ファイルはMp3かWavのみ有効です。");
-    return;
-  }
-  
   $('#music_spiner').removeClass("d-none");
 
   var form = $('#music_form').get(0);
@@ -151,11 +143,6 @@ $('#lyrics_button').click(function (e) {
     $('#lyrics_spiner').addClass("d-none");
   });
 });
-
-// ファイルの拡張子取得
-function splitExt(filename) {
-    return filename.split(/\.(?=[^.]+$)/);
-}
 
 
 /*

@@ -65,7 +65,7 @@
                               <textarea class="form-control comment" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
                             </div>
     
-                          <button id="comment_button" type="button" class="btn btn-primary mt-3">
+                          <button id="comment_button" type="button" class="btn bg-base text-white mt-3 col col-md-3">
                             <span class="spinner-border spinner-border-sm d-none" id="comment_spiner"  role="status" aria-hidden="false"></span>
                             投稿</button>
                         </form>

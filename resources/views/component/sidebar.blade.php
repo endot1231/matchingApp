@@ -69,7 +69,7 @@
                 <label class="custom-file-label" for="customFile">ファイル選択...</label>
               </div>
 
-              <button id="music_button" type="button" class="btn bg-base text-white mt-3">
+              <button id="music_button" type="button" class="btn bg-base text-white mt-3 col col-md-3">
                 <span class="spinner-border spinner-border-sm d-none" role="status" id="music_spiner"
                   aria-hidden="false"></span>
                 投稿</button>
@@ -103,7 +103,7 @@
                   name="lyrics_contents"></textarea>
               </div>
 
-              <button id="lyrics_button" type="button" class="btn bg-base text-white mt-3">
+              <button id="lyrics_button" type="button" class="btn bg-base text-white col col-md-3 mt-3>
                 <span class="spinner-border spinner-border-sm d-none" role="status" id="lyrics_spiner"
                   aria-hidden="false"></span>
                 投稿
