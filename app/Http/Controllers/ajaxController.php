@@ -109,6 +109,7 @@ class ajaxController extends Controller
         {
             //EXIF情報の取得
             $exif = @exif_read_data($file); 
+            $exif = $exif ? $exif : [];
             $image = imagecreatefromstring(file_get_contents($file));
 
             // 画像の回転処理
@@ -117,7 +118,7 @@ class ajaxController extends Controller
             $imageName = str_shuffle(time().$file->getClientOriginalName()). '.' .$file->getClientOriginalExtension();
             $user->icon = $user_id."/".$imageName;
             \Storage::makeDirectory($user_id);
-            \Storage::putFileAs($user_id,$file, $imageName,'public');
+            \Storage::putFileAs($user_id,$image, $imageName,'public');
         }
 
         $user->save();
