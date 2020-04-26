@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\maailSend;
+use SebastianBergmann\Environment\Console;
 
 class ajaxController extends Controller
 {
@@ -101,13 +102,19 @@ class ajaxController extends Controller
         $user_id =$request->session()->get('user_id');  
         $user = users::find($user_id);
         $user->user_name =$request->profile_name;
-        $user->comment =$request->profile_comment;
-       
+        $user->comment =$request->profile_comment;  
 
         $file = $request->file('profile_img');
         if(isset($file))
         {
-            $imageName = str_shuffle(time().$request->file('profile_img')->getClientOriginalName()). '.' . $request->file('profile_img')->getClientOriginalExtension();
+            //EXIF情報の取得
+            $exif = @exif_read_data($file); 
+            $image = imagecreatefromstring(file_get_contents($file));
+
+            // 画像の回転処理
+            $image = $this->rotate($image, $exif);
+
+            $imageName = str_shuffle(time().$file->getClientOriginalName()). '.' .$file->getClientOriginalExtension();
             $user->icon = $user_id."/".$imageName;
             \Storage::makeDirectory($user_id);
             \Storage::putFileAs($user_id,$file, $imageName,'public');
@@ -115,5 +122,40 @@ class ajaxController extends Controller
 
         $user->save();
         return['fin'=>''];
+    }
+
+    
+    function rotate($image,array $exif)
+    {
+        $orientation = $exif['Orientation'] ?? 1;
+
+        switch ($exif) {
+            case 1: //no rotate
+                break;
+            case 2: //FLIP_HORIZONTAL
+                imageflip($image, IMG_FLIP_HORIZONTAL);
+                break;
+            case 3: //ROTATE 180
+                $image = imagerotate($image, 180, 0);
+                break;
+            case 4: //FLIP_VERTICAL
+                imageflip($image, IMG_FLIP_VERTICAL);
+                break;
+            case 5: //ROTATE 270 FLIP_HORIZONTAL
+                $image = imagerotate($image, 270, 0);
+                imageflip($image, IMG_FLIP_HORIZONTAL);
+                break;
+            case 6: //ROTATE 90
+                $image = imagerotate($image, 270, 0);
+                break;
+            case 7: //ROTATE 90 FLIP_HORIZONTAL
+                $image = imagerotate($image, 90, 0);
+                imageflip($image, IMG_FLIP_HORIZONTAL);
+                break;
+            case 8: //ROTATE 270
+                $image = imagerotate($image, 90, 0);
+                break;
+        }
+        return $image;
     }
 }
