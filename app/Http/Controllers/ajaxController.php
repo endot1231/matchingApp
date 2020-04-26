@@ -129,7 +129,7 @@ class ajaxController extends Controller
     {
         $orientation = $exif['Orientation'] ?? 1;
 
-        switch ($exif) {
+        switch ($orientation) {
             case 1: //no rotate
                 break;
             case 2: //FLIP_HORIZONTAL
