@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\maailSend;
 use SebastianBergmann\Environment\Console;
 
+use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image;
+use Carbon\Carbon;
+
 class ajaxController extends Controller
 {
     public function getItemList(Request $request)
@@ -104,21 +108,26 @@ class ajaxController extends Controller
         $user->user_name =$request->profile_name;
         $user->comment =$request->profile_comment;  
 
+        
         $file = $request->file('profile_img');
+        //$file->angle(39);
         if(isset($file))
         {
-            //EXIF情報の取得
-            $exif = @exif_read_data($file); 
-            $exif = $exif ? $exif : [];
-            $image = imagecreatefromstring(file_get_contents($file));
+            $now = date_format(Carbon::now(), 'YmdHis');
+            $name = $file->getClientOriginalName();
+            $tmpFile = $now . '_' . $name;
+            $tmpPath = storage_path('app/tmp/').$tmpFile;
 
-            // 画像の回転処理
-            $image = $this->rotate($image, $exif);
-
+            $image = Image::make($file)->save($tmpPath);
+            $image->orientate();
+           
             $imageName = str_shuffle(time().$file->getClientOriginalName()). '.' .$file->getClientOriginalExtension();
             $user->icon = $user_id."/".$imageName;
             \Storage::makeDirectory($user_id);
-            \Storage::putFileAs($user_id,$image, $imageName,'public');
+            $file=new File($tmpPath);
+           
+            \Storage::putFileAs($user_id,$file,$imageName,'public');
+            Storage::disk('local')->delete('tmp/' . $tmpFile);
         }
 
         $user->save();
