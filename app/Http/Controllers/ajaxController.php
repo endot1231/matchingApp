@@ -108,26 +108,27 @@ class ajaxController extends Controller
         $user->user_name =$request->profile_name;
         $user->comment =$request->profile_comment;  
 
-        
         $file = $request->file('profile_img');
-        //$file->angle(39);
         if(isset($file))
         {
             $now = date_format(Carbon::now(), 'YmdHis');
             $name = $file->getClientOriginalName();
-            $tmpFile = $now . '_' . $name;
-            $tmpPath = storage_path('app/tmp/').$tmpFile;
 
-            $image = Image::make($file)->save($tmpPath);
+            $tmpFileName = $now . '_' . $name;
+            $tmpFilePath = storage_path('app/tmp/').$tmpFileName;
+
+            $image = Image::make($file)->save($tmpFilePath);
             $image->orientate();
            
             $imageName = str_shuffle(time().$file->getClientOriginalName()). '.' .$file->getClientOriginalExtension();
-            $user->icon = $user_id."/".$imageName;
+            
             \Storage::makeDirectory($user_id);
-            $file=new File($tmpPath);
+            $tmpFile=new File( $tmpFilePath);
            
-            \Storage::putFileAs($user_id,$file,$imageName,'public');
-            Storage::disk('local')->delete('tmp/' . $tmpFile);
+            \Storage::putFileAs($user_id,$tmpFile,$imageName,'public');
+            \Storage::disk('local')->delete('tmp/'.$tmpFileName );
+
+            $user->icon = $user_id."/".$imageName;
         }
 
         $user->save();
