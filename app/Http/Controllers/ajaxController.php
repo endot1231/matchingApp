@@ -116,10 +116,8 @@ class ajaxController extends Controller
 
             $tmpFileName = $now . '_' . $name;
             $tmpFilePath = storage_path('app/tmp/').$tmpFileName;
-
-            $image = Image::make($file)->save($tmpFilePath);
-            $image->orientate()->save();
-           
+            
+            $image = Image::make($file)->orientate()->save($tmpFilePath);
             $imageName = str_shuffle(time().$file->getClientOriginalName()). '.' .$file->getClientOriginalExtension();
             
             \Storage::makeDirectory($user_id);
