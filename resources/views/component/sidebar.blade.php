@@ -1,18 +1,18 @@
-<ul class="d-lg-block order-md-0 d-flex d-flex order-1 nav position-fixed" id="side_button_ul">
-  <li class="mt-0 mt-lg-5"><a href="{{url('/')}}" class="nav-link text-dark h5 side_button col"><i
-        class="fas fa-home fa-fw fa-1x"></i><span>ホーム</span></a></li>
+<ul class="d-lg-block order-md-0 d-flex order-1 nav position-fixed" id="side_button_ul">
+
+  <li class="mt-0 mt-lg-5"><a href="{{url('/')}}" class="nav-link text-dark h5 side_button row">
+    <i class="fas fa-home fa-fw fa-1x"></i><span class="col-12 text-center">ホーム</span></a></li>
 
   @if (Session::has('user_id'))
-  <li class="mt-0 mt-lg-5"><a href="{{url('/profile')}}" class="nav-link btn-link text-dark h5 side_button col">
-    <i class="fas fa-user-circle fa-fw fa-1x"></i><span>マイページ</span></a></li>
+  <li class="mt-0 mt-lg-5"><a href="{{url('/profile')}}" class="nav-link btn-link text-dark h5 side_button row">
+    <i class="fas fa-user-circle fa-fw fa-1x"></i><span class="col-12 text-center">マイページ</span></a></li>
   @else
-  <li data-toggle="modal" data-target="#myModal" class="border-base nav-link h5 mt-0 mt-lg-5 side_button text-dark col pl-0 pr-0">
-    <i class="fas fa-user-circle fa-fw fa-1x"></i><span>マイページ</span></li>
+  <li data-toggle="modal" data-target="#myModal" class="border-base nav-link h5 mt-0 mt-lg-5 side_button text-dark pl-0 pr-0 row">
+    <i class="fas fa-user-circle fa-fw fa-1x"></i><span class="col-12 text-center">マイページ</span></li>
   @endif
 
-  <li type="button" data-toggle="modal" data-target="#myModal"
-    class="nav-link h5 bg-base mt-0 mt-lg-5 side_button col pl-0 pr-0 btn btn-primary">
-    <i class="fas fa-pen fa-fw fa-1x"></i><span>投稿</span></li>
+  <li data-toggle="modal" data-target="#myModal" class="nav-link h5 bg-base mt-0 mt-lg-5 side_button text-white pl-0 pr-0 row">
+    <i class="fas fa-pen fa-fw fa-1x"></i><span class="col-12 text-center">投稿</span></li>
 </ul>
 
 <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

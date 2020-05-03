@@ -132,39 +132,4 @@ class ajaxController extends Controller
         $user->save();
         return['fin'=>''];
     }
-
-    
-    function rotate($image,array $exif)
-    {
-        $orientation = $exif['Orientation'] ?? 1;
-
-        switch ($orientation) {
-            case 1: //no rotate
-                break;
-            case 2: //FLIP_HORIZONTAL
-                imageflip($image, IMG_FLIP_HORIZONTAL);
-                break;
-            case 3: //ROTATE 180
-                $image = imagerotate($image, 180, 0);
-                break;
-            case 4: //FLIP_VERTICAL
-                imageflip($image, IMG_FLIP_VERTICAL);
-                break;
-            case 5: //ROTATE 270 FLIP_HORIZONTAL
-                $image = imagerotate($image, 270, 0);
-                imageflip($image, IMG_FLIP_HORIZONTAL);
-                break;
-            case 6: //ROTATE 90
-                $image = imagerotate($image, 270, 0);
-                break;
-            case 7: //ROTATE 90 FLIP_HORIZONTAL
-                $image = imagerotate($image, 90, 0);
-                imageflip($image, IMG_FLIP_HORIZONTAL);
-                break;
-            case 8: //ROTATE 270
-                $image = imagerotate($image, 90, 0);
-                break;
-        }
-        return $image;
-    }
 }
