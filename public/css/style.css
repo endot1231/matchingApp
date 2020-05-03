@@ -439,7 +439,7 @@ header div .item-circ {
 
   /* ボタンコメントの非表示*/
   .side_button span {
-    display: none;
+    font-size: 12px;
   }
 
   ul.profile_item li.item-inverted .item_panel {
