@@ -60,7 +60,7 @@
                   rows="6">{{$user->comment}}</textarea>
               </div>
 
-              <button id="profile_button" type="button" class="btn bg-base text-white mt-3">
+              <button id="profile_button" type="button" class="btn bg-base text-white col col-md-3 mt-3">
                 <span class="spinner-border spinner-border-sm d-none" id="profile_spiner" ole="status"
                   aria-hidden="false"></span>
                 変更</button>
