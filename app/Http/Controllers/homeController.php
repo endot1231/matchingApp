@@ -44,7 +44,7 @@ class homeController extends Controller
         $user_id =$request->session()->get('user_id');
         
         $user = users::find($id);
-        $contents = postsModel::where('user_id','=',$id)->get();
+        $contents = postsModel::where('user_id','=',$id)->orderBy('post_id', 'desc')->get();
 
         if($id == $user_id)
         {
