@@ -103,7 +103,7 @@
                   name="lyrics_contents"></textarea>
               </div>
 
-              <button id="lyrics_button" type="button" class="btn bg-base text-white col col-md-3 mt-3>
+              <button id="lyrics_button" type="button" class="btn bg-base text-white col col-md-3 mt-3">
                 <span class="spinner-border spinner-border-sm d-none" role="status" id="lyrics_spiner"
                   aria-hidden="false"></span>
                 投稿
