@@ -30,7 +30,7 @@
       @include('component.profile',['user'=>$user])
       @endif
 
-      @if(count($contents) > 1 )
+      @if(count($contents) > 0 )
       <ul class="item_list line_left profile_item mt-5">
         @foreach($contents as $content)
         <li class="item-inverted">
