@@ -21,7 +21,7 @@
             <div class="col-8 text-center p-0">
                 <h2 class="ml-5"> 
                   @if(isset($content->lyrics->post_id))
-                  歌詞 
+                  作詞 
                   @else
                   作曲
                   @endif   
