@@ -1,8 +1,8 @@
 # 作詞・作曲交流SNS
 ## 概要
-<span style="color: #AB8C00; ">作詞</span>はできるけど<span style="color: #AB001F; ">作曲</span>ができない。
+「作詞」はできるけど「作曲」ができない。
 
-<span style="color: #AB001F; ">作曲</span>はできるけど<span style="color: #AB8C00; ">作詞</span>ができない。
+「作曲」はできるけど「作詞」ができない。
 
 そんなお悩みを解決するためのSNSです。
 
