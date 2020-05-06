@@ -21,7 +21,7 @@
 ## 動作デモ
 
 ### 1.ホーム画面
-  <a herf="https://matchingapp.endot1231.com">matchingapp.endot1231.com</a>にアクセスすると下記の画面が表示
+ [matchingapp.endot1231.com](https://matchingapp.endot1231.com)にアクセスすると下記の画面が表示
 ![ホーム画面](https://user-images.githubusercontent.com/61013390/80949201-80470800-8e2e-11ea-87ae-02737432d3f3.PNG)
 
 ### 2.登録・ログインの促進
