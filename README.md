@@ -103,3 +103,9 @@
 - VMware
 - Docker
 - Visual Studio Code
+
+## 今後の課題
+- 作品をAJAXで取得する際、整形されたHTMLを受け取り追加しているので、最低限の情報をJSON形式で受け取りフロントで整形し追加
+- PWAに対応
+- Circleciのテスト対応
+- パスワードリセット機能追加
