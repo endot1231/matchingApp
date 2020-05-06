@@ -1,8 +1,8 @@
 # 作詞・作曲交流SNS
 ## 概要
-<span style="color: #AB8C00; ">作詞</span>はできるけど<span style="color: #AB001F; ">作曲</span>ができない。
+「作詞」はできるけど「作曲」ができない。
 
-<span style="color: #AB001F; ">作曲</span>はできるけど<span style="color: #AB8C00; ">作詞</span>ができない。
+「作曲」はできるけど「作詞」ができない。
 
 そんなお悩みを解決するためのSNSです。
 
@@ -21,7 +21,7 @@
 ## 動作デモ
 
 ### 1.ホーム画面
-  <a herf="https://matchingapp.endot1231.com">matchingapp.endot1231.com</a>にアクセスすると下記の画面が表示
+ [matchingapp.endot1231.com](https://matchingapp.endot1231.com)にアクセスすると下記の画面が表示
 ![ホーム画面](https://user-images.githubusercontent.com/61013390/80949201-80470800-8e2e-11ea-87ae-02737432d3f3.PNG)
 
 ### 2.登録・ログインの促進
@@ -103,3 +103,9 @@
 - VMware
 - Docker
 - Visual Studio Code
+
+## 今後の課題
+- 作品をAJAXで取得する際、整形されたHTMLを受け取り追加しているので、最低限の情報をJSON形式で受け取りフロントで整形し追加
+- PWAに対応
+- Circleciのテスト対応
+- パスワードリセット機能追加
