@@ -25,7 +25,7 @@
 ![ホーム画面](https://user-images.githubusercontent.com/61013390/80949201-80470800-8e2e-11ea-87ae-02737432d3f3.PNG)
 
 ### 2.登録・ログインの促進
-ログインせずにSNS機能を使用すると登録・ログインが必要とメッセージが表示される
+ログインせずにSNS機能を使用すると登録・ログインが必要とメッセージが表示
 ![ログインなし](https://user-images.githubusercontent.com/61013390/80949387-e764bc80-8e2e-11ea-9958-b62512a5d888.PNG)
 
 ### 3.登録画面
@@ -41,7 +41,7 @@
 ![メール送信後](https://user-images.githubusercontent.com/61013390/80963110-48998980-8e49-11ea-94d4-4a54a1edb3d1.PNG)
 
 ### 6.メール内容
-下記の内容のメールが届くので、リンクをクリックする
+下記の内容のメールが届くので、リンクをクリック
 ![メール設定](https://user-images.githubusercontent.com/61013390/80949318-c7cd9400-8e2e-11ea-886d-7615a476ed0a.PNG)
 
 ### 7.ユーザー名登録
@@ -49,11 +49,11 @@
 ![ユーザー名登録](https://user-images.githubusercontent.com/61013390/80962845-c4df9d00-8e48-11ea-80b5-ff3a772a1d79.PNG)
 
 ### 8. 本登録完了
-本登録完了後、リンクをクリックしログイン画面に遷移する
+本登録完了後、リンクをクリックしログイン画面に遷移
 ![登録完了画面](https://user-images.githubusercontent.com/61013390/80949540-298dfe00-8e2f-11ea-91bd-8ed1e215ba63.PNG)
 
 ### 9.ログイン画面
-登録した、メールアドレスとパスワードを入力しログインする
+登録した、メールアドレスとパスワードを入力しログイン
 ![ログイン画面](https://user-images.githubusercontent.com/61013390/80949410-f2b7e800-8e2e-11ea-88b0-d8d6c8bb4e97.PNG)
 
 ### 10.マイページ表示
@@ -73,7 +73,7 @@
 ![投稿(作詞)](https://user-images.githubusercontent.com/61013390/80949472-12e7a700-8e2f-11ea-9347-647c64343417.PNG)
 
 ### 13.作品詳細照会
-ホームで投稿されてた作品を選択すると、作品の詳細が照会可能
+ホームで投稿された作品を選択すると、作品の詳細が照会可能
 
 #### 作曲
 ![作曲](https://user-images.githubusercontent.com/61013390/80949425-f8adc900-8e2e-11ea-981c-5960df2a7e42.PNG)
@@ -81,7 +81,7 @@
 ![作詩](https://user-images.githubusercontent.com/61013390/80949494-1aa74b80-8e2f-11ea-882d-3c2942a9b073.PNG)
 
 ### 14.コメント投稿
-作品詳細画面でコメントボタンを押下すると、作品に対するコメントが投稿可能
+作品詳細画面でコメントボタンを押下後、作品に対するコメントが投稿可能
 
 ![コメント投稿](https://user-images.githubusercontent.com/61013390/80964233-72ec4680-8e4b-11ea-9823-b6045c47c731.PNG)
 
