@@ -38,9 +38,9 @@
     </nav>   
     <ul class="col-12 col-lg-8 item_list line_left order-lg-1 order-0 comennt_list mt-5 pt-5"> 
       @include('component.detaile', ['content' => $content])
-      @isset($comments)
+      @if(count($comments) > 0 )
         @each('component.comment',$comments,'comment')
-      @endisset
+      @endif
     </ul>
   </div>
 </div>
