@@ -25,6 +25,12 @@ class postsRepository implements PostsTableInterFace
         return $contents;
     }
 
+    public function getPostsById(int $post_id)
+    {
+        $content = $this->posts->where('post_id','=',$post_id)->first();
+        return $content;
+    }
+
     public function getPostsALL()
     {
 

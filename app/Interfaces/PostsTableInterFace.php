@@ -7,4 +7,5 @@ interface PostsTableInterFace
     public function registPosts();
     public function getPosts(int $count);
     public function getPostsALL();
+    public function getPostsById(int $post_id);
 }

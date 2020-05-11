@@ -34,15 +34,9 @@ class homeController extends Controller
 
     public function getDetaile(Request $request,$id)
     {
-        $comment = commentsModel::where('post_id','=',$id)->count();
-        if($comment > 0)
-        {
-            $comment = commentsModel::where('post_id','=',$id)->get();
-        }
-        else
-        {
-            $comment = null;
-        }
+        // コンテンツ取得
+        $content = $this->postsRepository->getPostsById($id);
+        
 
         $content = postsModel::where('post_id','=',$id)->first();
         return view('home.detaile',['content' =>$content,'comments'=>$comment]);
