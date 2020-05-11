@@ -7,14 +7,17 @@ use App\commentsModel;
 use App\postsModel;
 use App\users;
 use App\interfaces\PostsTableInterFace;
+use App\interfaces\CommentsTableInterFace;
 
 class homeController extends Controller
 {
     protected $postsRepository;
+    protected $commentsRepository;
 
-    public function __construct(PostsTableInterFace $postsRepository)
+    public function __construct(PostsTableInterFace $postsRepository,CommentsTableInterFace $commentsRepository )
     {
        $this->postsRepository = $postsRepository;
+       $this->commentsRepository = $commentsRepository;
     }
 
     public function index(Request $request)
@@ -37,8 +40,9 @@ class homeController extends Controller
         // コンテンツ取得
         $content = $this->postsRepository->getPostsById($id);
         
+         // コメント取得
+        $comment =$this->commentsRepository->getComments($id);
 
-        $content = postsModel::where('post_id','=',$id)->first();
         return view('home.detaile',['content' =>$content,'comments'=>$comment]);
     }
 
