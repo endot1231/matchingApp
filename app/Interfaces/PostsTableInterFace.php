@@ -8,4 +8,5 @@ interface PostsTableInterFace
     public function getPosts(int $count,int $skip);
     public function getPostsByPost_Id(int $post_id);
     public function getPostsByUser_Id(int $user_id);
+    public function allCount():int;
 }
