@@ -20,6 +20,11 @@ class MusicRepository implements MusicTableInterFace
         $data['post_id'] = $post_id;
         $data['filepath'] = $filePath;
 
-        $this->music->create();
-    }  
+        $this->music->create($data);
+    }
+
+    public function allCount():int
+    {
+        return $this->music::all()->Count();
+    }
 }
