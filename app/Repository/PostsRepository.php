@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\postsModel;
 use App\interfaces\PostsTableInterFace;
 
-class postsRepository implements PostsTableInterFace
+class PostsRepository implements PostsTableInterFace
 {
     protected $posts;
 
@@ -40,8 +40,8 @@ class postsRepository implements PostsTableInterFace
         return $this->posts->where('user_id','=',$user_id)->orderBy('post_id', 'desc')->get();
     }
 
-    public function getPostsALL()
+    public function allCount():int
     {
-
+        return $this->posts::all()->Count();
     }
 }
