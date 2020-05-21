@@ -9,4 +9,6 @@ class lyricsModel extends Model
     protected $table = 'lyrics';
     const UPDATED_AT = null;
     const CREATED_AT = null;
+
+    protected $fillable = [ 'lyrics_id', 'post_id', 'contents'];
 }

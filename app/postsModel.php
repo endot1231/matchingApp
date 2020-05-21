@@ -14,6 +14,7 @@ class postsModel extends Model
     const UPDATED_AT = null;
     const CREATED_AT = null;
 
+    protected $fillable = [ 'post_id', 'user_id', 'title','comment'];
     
     public function user()
     {
