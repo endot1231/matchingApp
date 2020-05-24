@@ -9,7 +9,6 @@ class musicModel extends Model
     protected $table = 'music';
     const UPDATED_AT = null;
     const CREATED_AT = null;
-
-
+    
     protected $fillable = [ 'music_id', 'post_id', 'filepath'];
 }
