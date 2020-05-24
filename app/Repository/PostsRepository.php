@@ -16,8 +16,7 @@ class PostsRepository implements PostsTableInterFace
 
     public function regist(int $post_id,int $user_id,string $title,string $comment)
     {
-        $postCount = $this->posts->all()->Count();   
-        $data['post_id'] = $postCount; 
+        $data['post_id'] = $post_id; 
         $data['user_id'] = $user_id;
         $data['title'] = $title;
         $data['comment'] = $comment;
