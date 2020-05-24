@@ -22,6 +22,21 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\interfaces\CommentsTableInterFace::class,
             \App\Repository\CommentsRepository::class
         );
+        
+        $this->app->bind(
+            \App\interfaces\UsersTableInterFace::class,
+            \App\Repository\UsersRepository::class
+        );
+        
+        $this->app->bind(
+            \App\interfaces\MusicTableInterFace::class,
+            \App\Repository\MusicRepository::class
+        );
+           
+        $this->app->bind(
+            \App\interfaces\LyricsTableInterFace::class,
+            \App\Repository\LyricsRepository::class
+        );
     }
 
     /**
