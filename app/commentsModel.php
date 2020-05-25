@@ -12,6 +12,7 @@ class commentsModel extends Model
     const UPDATED_AT = null;
     const CREATED_AT = null;
 
+    protected $fillable = [ 'comment_id', 'post_id', 'user_id','contents'];
 
     public function user()
     {
