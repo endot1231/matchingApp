@@ -12,8 +12,20 @@ use App\Mail\EmailVerification;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 
+use App\Service\PostsService;
+use App\Service\UserService;
+
 class accountController extends Controller
 {
+    protected $postsService;
+    protected $userService;
+
+    public function __construct(PostsService $postsService,LyricsService $lyricsService,MusicService $musicService,CommentsService $commentsService,UserService $userService)
+    {
+       $this->postsService = $postsService;
+       $this->userService = $userService;
+    }
+
     public function index(Request $request)
     {
         if ($request->session()->exists('user_id')) 
