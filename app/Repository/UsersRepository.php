@@ -20,6 +20,11 @@ class UsersRepository implements UsersTableInterFace
 
     }
 
+    public function getUserByEmail_Token(string $email_token)
+    {
+        return $this->users->where('email_verify_token',$email_token)->first();;
+    }
+
     public function update(int $user_id,string $user_name,string $comment,string $icon_path)
     {
         $user = $this->users->find($user_id);
