@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\users;
 use App\interfaces\UsersTableInterFace;
 use Egulias\EmailValidator\Warning\Comment;
+use Carbon\Carbon;
 
 class UsersRepository implements UsersTableInterFace
 {
@@ -18,6 +19,14 @@ class UsersRepository implements UsersTableInterFace
     public function regist()
     {
 
+    }
+
+    public function updateEmail_Token(int $user_id,string $status,Carbon $verify_at)
+    {
+        $user = $this->users->find($user_id);
+        $user->$status = $status;
+        $user->verify_at = $verify_at;     
+        $user->save();
     }
 
     public function getUserByEmail_Token(string $email_token)
