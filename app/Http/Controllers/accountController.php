@@ -26,17 +26,6 @@ class accountController extends Controller
        $this->userService = $userService;
     }
 
-    public function index(Request $request)
-    {
-        if ($request->session()->exists('user_id')) 
-        {
-            $contents = postsModel::orderBy('post_id','desc')->take(20)->get();
-            return view('home.index',['contents'=>$contents]);
-        }
-
-        return view('account.index');
-    }
-
     public function showForm($email_token)
     {
         // 使用可能なトークンか
