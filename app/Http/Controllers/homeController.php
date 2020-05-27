@@ -52,15 +52,13 @@ class homeController extends Controller
 
     public function getProfile(Request $request,$id)
     {
+        $user = $this->userService->getUserById($id);
+        $contents =$this->postService->getPostsByUser_Id($id);
+
         // ユーザーIDがある場合取得
-        if (!$request->session()->exists('user_id')) 
+        if ($request->session()->exists('user_id')) 
         {
             $user_id =$request->session()->get('user_id');
-
-            //$user = $this->userService->getUserById($user_id);
-            $user = $this->userService->getUserById($id);
-            //$contents =$this->postService->getPostsByUser_Id($user_id);
-            $contents =$this->postService->getPostsByUser_Id($id);
 
             // セッションのユーザーIDとリクエストのユーザーIDが同じ場合マイプロフィールを表示
             if($id == $user_id)
