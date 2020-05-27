@@ -20,11 +20,11 @@ class UserService
 
   }
 
-  public function update(int $user_id,string $user_name,string $comment,UploadedFile $icon)
+  public function update(int $user_id,string $user_name,string $comment,$icon)
   {
     $icon_path ="";
     
-    if(isset($file))
+    if(isset($icon))
     {
         $now = date_format(Carbon::now(), 'YmdHis');
         $name = $icon->getClientOriginalName();
